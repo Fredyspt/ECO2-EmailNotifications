@@ -30,6 +30,7 @@ function CheckD20(){
 
     if(somethingWrong){
       var subject = 'D20 Parametros fuera de rango';
+      var message = createHtml();
       SendEmail(subject, message);
     }
   }
@@ -43,4 +44,8 @@ function CheckD20(){
       htmlTemplate.viscosityNoria = viscosityNoria;
       htmlTemplate.solidsNoria = solidsNoria;
       htmlTemplate.thicknessNoria = thicknessNoria;
+
+      const htmlForEmail = htmlTemplate.evaluate().getContent();
+
+      return htmlForEmail;
   }
