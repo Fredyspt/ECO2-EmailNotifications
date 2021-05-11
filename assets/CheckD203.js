@@ -46,9 +46,9 @@ function CheckD203(){
     let sendNotification;
   
     // Get notification time value
-    let notificationTime = worksheet.getRange("G57").getValue();
+    let rawNotificationTime = worksheet.getRange("G57").getValue();
     // Substract hours and minutes from notification time
-    let notificationHour = notificationTime.toString().substring(11, 16);
+    let notificationHour = Utilities.formatDate(rawNotificationTime, "GMT-6","HH:mm");
     // Sets notificaton time on cell  
     let setNotificationTime = (time) => {worksheet.getRange("G57").setValue(time)}
   
