@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      .center {
+        text-align: center;
+      }
+
+      table{
+        border: 2px solid black
+      }
+
+      tr, th, td{
+        border: 1px solid black
+      }
+
+      .good {
+        background-color: green;
+        color: white;
+        font-weight: bold;
+      }
+
+
+      .bad {
+        background-color: red;
+        color: white;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Parámetros fuera de rango</h1>
+    
+      <? if(d20Fail) {?>
+      <h2>D20</h2>
+      <h3>Última medición: <?= d20Timestamp ?></h3>
+      <table>
+          <thead>
+              <tr>
+                  <th>Parámetro</th>
+                  <th style="text-">Medición actual</th>
+                  <th>Rango permitido</th>
+                  <th>Responsable de medición</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <? if(d20ChemicalColors[0] == "center bad") {?>
+              <tr>
+                  <td>Concentración de Soda</td>
+                  <td class="<?= d20ChemicalColors[0] ?>"> <?= d20SodaConcentration ?> </td>
+                  <td class="center">10 ± 2</td>
+                  <td><?= d20Responsible ?></td>
+              </tr>
+              <? } if(d20ChemicalColors[1] == "center bad") {?>
+              <tr>
+                  <td>NOE - Viscosidad</td>
+                  <td class="<?= d20ChemicalColors[1] ?>"><?= d20ViscosityNoe ?></td>
+                  <td class="center">2.8 ± 0.7</td>
+                  <td><?= d20Responsible ?></td>
+              </tr>
+              <? } if(d20ChemicalColors[2] == "center bad") {?>
+              <tr>
+                  <td>NOE - % de sólidos</td>
+                  <td class="<?= d20ChemicalColors[2] ?>"><?= d20SolidsNoe ?></td>
+                  <td class="center">20 ± 3</td>
+                  <td><?= d20Responsible ?></td>
+              </tr>
+              <? } if(d20ChemicalColors[3] == "center bad") {?>
+              <tr>
+                  <td>NOE - Thickness</td>
+                  <td class="<?= d20ChemicalColors[3] ?>"><?= d20ThicknessNoe ?></td>
+                  <td class="center">0.8 ± 0.1</td>
+                  <td><?= d20Responsible ?></td>
+              </tr>
+              <? } if(d20ChemicalColors[4] == "center bad") {?>
+              <tr>
+                  <td>NORIA - Viscosidad</td>
+                  <td class="<?= d20ChemicalColors[4] ?>"><?= d20ViscosityNoria ?></td>
+                  <td class="center">2.4 ± 0.6</td>
+                  <td><?= d20Responsible ?></td>
+              </tr>
+              <? } if(d20ChemicalColors[5] == "center bad") {?>
+              <tr>
+                  <td>NORIA - % de sólidos</td>
+                  <td class="<?= d20ChemicalColors[5] ?>"><?= d20SolidsNoria ?></td>
+                  <td class="center">34 ± 3</td>
+                  <td><?= d20Responsible ?></td>
+              </tr>
+              <? } if(d20ChemicalColors[6] == "center bad") {?>
+              <tr>
+                  <td>NORIA - Thickness</td>
+                  <td class="<?= d20ChemicalColors[6] ?>"><?= d20ThicknessNoria ?></td>
+                  <td class="center">2.6 ± 0.2</td>
+                  <td><?= d20Responsible ?></td>
+              </tr>
+              <? } ?>
+          </tbody>
+      </table>
+      <? } ?>
+
+      <? if(d18Fail) {?>
+      <h2>D18</h2>
+      <h3>Última medición: <?= d18Timestamp ?></h3>
+      <table>
+          <thead>
+              <tr>
+                  <th>Parámetro</th>
+                  <th style="text-">Medición actual</th>
+                  <th>Rango permitido</th>
+                  <th>Responsable de medición</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <? if(d18ChemicalColors[0] == "center bad") {?>
+              <tr>
+                  <td>Concentración de Soda</td>
+                  <td class="<?= d18ChemicalColors[0] ?>"> <?= d18SodaConcentration ?> </td>
+                  <td class="center">10 ± 2</td>
+                  <td><?= d18Responsible ?></td>
+              </tr>
+              <? } if(d18ChemicalColors[1] == "center bad") {?>
+              <tr>
+                  <td>NOE - Viscosidad</td>
+                  <td class="<?= d18ChemicalColors[1] ?>"><?= d18ViscosityNoe ?></td>
+                  <td class="center">2.8 ± 0.7</td>
+                  <td><?= d18Responsible ?></td>
+              </tr>
+              <? } if(d18ChemicalColors[2] == "center bad") {?>
+              <tr>
+                  <td>NOE - % de sólidos</td>
+                  <td class="<?= d18ChemicalColors[2] ?>"><?= d18SolidsNoe ?></td>
+                  <td class="center">20 ± 3</td>
+                  <td><?= d18Responsible ?></td>
+              </tr>
+              <? } if(d18ChemicalColors[3] == "center bad") {?>
+              <tr>
+                  <td>NOE - Thickness</td>
+                  <td class="<?= d18ChemicalColors[3] ?>"><?= d18ThicknessNoe ?></td>
+                  <td class="center">0.8 ± 0.1</td>
+                  <td><?= d18Responsible ?></td>
+              </tr>
+              <? } if(d18ChemicalColors[4] == "center bad") {?>
+              <tr>
+                  <td>NORIA - Viscosidad</td>
+                  <td class="<?= d18ChemicalColors[4] ?>"><?= d18ViscosityNoria ?></td>
+                  <td class="center">2.4 ± 0.6</td>
+                  <td><?= d18Responsible ?></td>
+              </tr>
+              <? } if(d18ChemicalColors[5] == "center bad") {?>
+              <tr>
+                  <td>NORIA - % de sólidos</td>
+                  <td class="<?= d18ChemicalColors[5] ?>"><?= d18SolidsNoria ?></td>
+                  <td class="center">34 ± 3</td>
+                  <td><?= d18Responsible ?></td>
+              </tr>
+              <? } if(d18ChemicalColors[6] == "center bad") {?>
+              <tr>
+                  <td>NORIA - Thickness</td>
+                  <td class="<?= d18ChemicalColors[6] ?>"><?= d18ThicknessNoria ?></td>
+                  <td class="center">2.6 ± 0.2</td>
+                  <td><?= d18Responsible ?></td>
+              </tr>
+              <? } ?>
+          </tbody>
+      </table>
+      <? } ?>
+
+      <? if(d13_2Fail) {?>
+      <h2>D13-2</h2>
+      <h3>Última medición: <?= d13_2Timestamp ?></h3>
+      <table>
+          <thead>
+              <tr>
+                  <th>Parámetro</th>
+                  <th style="text-">Medición actual</th>
+                  <th>Rango permitido</th>
+                  <th>Responsable de medición</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <? if(d13_2ChemicalColors[0] == "center bad") {?>
+              <tr>
+                  <td>NOE - Viscosidad</td>
+                  <td class="<?= d13_2ChemicalColors[0] ?>"><?= d13_2ViscosityNoe ?></td>
+                  <td class="center">2.8 ± 0.7</td>
+                  <td><?= d13_2Responsible ?></td>
+              </tr>
+              <? } if(d13_2ChemicalColors[1] == "center bad") {?>
+              <tr>
+                  <td>NOE - % de sólidos</td>
+                  <td class="<?= d13_2ChemicalColors[1] ?>"><?= d13_2SolidsNoe ?></td>
+                  <td class="center">20 ± 3</td>
+                  <td><?= d13_2Responsible ?></td>
+              </tr>
+              <? } if(d13_2ChemicalColors[2] == "center bad") {?>
+              <tr>
+                  <td>NOE - Thickness</td>
+                  <td class="<?= d13_2ChemicalColors[2] ?>"><?= d13_2ThicknessNoe ?></td>
+                  <td class="center">0.8 ± 0.1</td>
+                  <td><?= d13_2Responsible ?></td>
+              </tr>
+              <? } if(d13_2ChemicalColors[3] == "center bad") {?>
+              <tr>
+                  <td>NORIA - Viscosidad</td>
+                  <td class="<?= d13_2ChemicalColors[3] ?>"><?= d13_2ViscosityNoria ?></td>
+                  <td class="center">2.4 ± 0.6</td>
+                  <td><?= d13_2Responsible ?></td>
+              </tr>
+              <? } if(d13_2ChemicalColors[4] == "center bad") {?>
+              <tr>
+                  <td>NORIA - % de sólidos</td>
+                  <td class="<?= d13_2ChemicalColors[4] ?>"><?= d13_2SolidsNoria ?></td>
+                  <td class="center">34 ± 3</td>
+                  <td><?= d13_2Responsible ?></td>
+              </tr>
+              <? } if(d13_2ChemicalColors[5] == "center bad") {?>
+              <tr>
+                  <td>NORIA - Thickness</td>
+                  <td class="<?= d13_2ChemicalColors[5] ?>"><?= d13_2ThicknessNoria ?></td>
+                  <td class="center">2.6 ± 0.2</td>
+                  <td><?= d13_2Responsible ?></td>
+              </tr>
+              <? } ?>
+          </tbody>
+      </table>
+      <? } ?>
+
+      <? if(d13_3Fail) {?>
+      <h2>D13-3</h2>
+      <h3>Última medición: <?= d13_3Timestamp ?></h3>
+      <table>
+          <thead>
+              <tr>
+                  <th>Parámetro</th>
+                  <th style="text-">Medición actual</th>
+                  <th>Rango permitido</th>
+                  <th>Responsable de medición</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <? if(d13_3ChemicalColors[0] == "center bad") {?>
+              <tr>
+                  <td>NOE - Viscosidad</td>
+                  <td class="<?= d13_3ChemicalColors[0] ?>"><?= d13_3ViscosityNoe ?></td>
+                  <td class="center">2.8 ± 0.7</td>
+                  <td><?= d13_3Responsible ?></td>
+              </tr>
+              <? } if(d13_3ChemicalColors[1] == "center bad") {?>
+              <tr>
+                  <td>NOE - % de sólidos</td>
+                  <td class="<?= d13_3ChemicalColors[1] ?>"><?= d13_3SolidsNoe ?></td>
+                  <td class="center">20 ± 3</td>
+                  <td><?= d13_3Responsible ?></td>
+              </tr>
+              <? } if(d13_3ChemicalColors[2] == "center bad") {?>
+              <tr>
+                  <td>NOE - Thickness</td>
+                  <td class="<?= d13_3ChemicalColors[2] ?>"><?= d13_3ThicknessNoe ?></td>
+                  <td class="center">0.8 ± 0.1</td>
+                  <td><?= d13_3Responsible ?></td>
+              </tr>
+              <? } if(d13_3ChemicalColors[3] == "center bad") {?>
+              <tr>
+                  <td>NORIA - Viscosidad</td>
+                  <td class="<?= d13_3ChemicalColors[3] ?>"><?= d13_3ViscosityNoria ?></td>
+                  <td class="center">2.4 ± 0.6</td>
+                  <td><?= d13_3Responsible ?></td>
+              </tr>
+              <? } if(d13_3ChemicalColors[4] == "center bad") {?>
+              <tr>
+                  <td>NORIA - % de sólidos</td>
+                  <td class="<?= d13_3ChemicalColors[4] ?>"><?= d13_3SolidsNoria ?></td>
+                  <td class="center">34 ± 3</td>
+                  <td><?= d13_3Responsible ?></td>
+              </tr>
+              <? } if(d13_3ChemicalColors[5] == "center bad") {?>
+              <tr>
+                  <td>NORIA - Thickness</td>
+                  <td class="<?= d13_3ChemicalColors[5] ?>"><?= d13_3ThicknessNoria ?></td>
+                  <td class="center">2.6 ± 0.2</td>
+                  <td><?= d13_3Responsible ?></td>
+              </tr>
+              <? } ?>
+          </tbody>
+      </table>
+      <? } ?>
+      
+      <? if(dp1Fail) {?>
+      <h2>DP1</h2>
+      <h3>Última medición: <?= dp1Timestamp ?></h3>
+      <table>
+          <thead>
+              <tr>
+                  <th>Parámetro</th>
+                  <th style="text-">Medición actual</th>
+                  <th>Rango permitido</th>
+                  <th>Responsable de medición</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <tr>
+                  <td>Concentración de Soda</td>
+                  <td class="<?= dp1ChemicalColor ?>"> <?= dp1SodaConcentration ?> </td>
+                  <td class="center">10 ± 2</td>
+                  <td><?= dp1Responsible ?></td>
+              </tr>
+          </tbody>
+      </table>
+      <? } ?>
+
+      <? if(dp2Fail) {?>
+      <h2>DP2</h2>
+      <h3>Última medición: <?= dp2Timestamp ?></h3>
+      <table>
+          <thead>
+              <tr>
+                  <th>Parámetro</th>
+                  <th style="text-">Medición actual</th>
+                  <th>Rango permitido</th>
+                  <th>Responsable de medición</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <tr>
+                  <td>Concentración de Soda</td>
+                  <td class="<?= dp2ChemicalColor ?>"> <?= dp2SodaConcentration ?> </td>
+                  <td class="center">10 ± 2</td>
+                  <td><?= dp2Responsible ?></td>
+              </tr>
+          </tbody>
+      </table>
+      <? } ?>
+
+      <? if(dp3Fail) {?>
+      <h2>DP3</h2>
+      <h3>Última medición: <?= dp3Timestamp ?></h3>
+      <table>
+          <thead>
+              <tr>
+                  <th>Parámetro</th>
+                  <th style="text-">Medición actual</th>
+                  <th>Rango permitido</th>
+                  <th>Responsable de medición</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <tr>
+                  <td>Concentración de Soda</td>
+                  <td class="<?= dp3ChemicalColor ?>"> <?= dp3SodaConcentration ?> </td>
+                  <td class="center">10 ± 2</td>
+                  <td><?= dp3Responsible ?></td>
+              </tr>
+          </tbody>
+      </table>
+      <? } ?>
+
+      <? if(pacFail) {?>
+      <h2>PAC-LINE</h2>
+      <h3>Última medición: <?= pacTimestamp ?></h3>
+      <table>
+          <thead>
+              <tr>
+                  <th>Parámetro</th>
+                  <th style="text-">Medición actual</th>
+                  <th>Rango permitido</th>
+                  <th>Responsable de medición</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <tr>
+                  <td>Concentración de Soda</td>
+                  <td class="<?= pacChemicalColor ?>"> <?= pacSodaConcentration ?> </td>
+                  <td class="center">10 ± 2</td>
+                  <td><?= pacResponsible ?></td>
+              </tr>
+          </tbody>
+      </table>
+      <? } ?>
+    </div>
+  </body>
+</html>
