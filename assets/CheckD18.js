@@ -23,7 +23,7 @@ function CheckD18() {
   let timestampHour = Utilities.formatDate(rawTimestamp, "GMT-6","HH:mm");
 
   // Check permissive range 
-  let cSodaOk = sodaConcentration >= 8 && sodaConcentration[0] <= 12;
+  let cSodaOk = sodaConcentration >= 9 && sodaConcentration <= 11;
   let vNoeOk = viscosityNoe >= 2.1 && viscosityNoe <= 3.5;
   let sNoeOk = solidsNoe >= 17 && solidsNoe <= 23;
   let tNoeOk = thicknessNoe >= 0.7 && thicknessNoe <= 0.9;

@@ -174,6 +174,12 @@ function Main() {
     if(isD20Ok) {d20.notified.setValue("No");}
     // If machine is not ok, hasn't been notified (notified != Si), then notifies.
     if(!isD20Ok && d20.notified.getValue() != "Si") {d20.notified.setValue("Si");}
+    
+    if(isD202Ok) {d202.notified.setValue("No");}
+    if(!isD202Ok && d202.notified.getValue() != "Si") {d202.notified.setValue("Si");}
+    
+    if(isD203Ok) {d203.notified.setValue("No");}
+    if(!isD203Ok && d203.notified.getValue() != "Si") {d203.notified.setValue("Si");}
 
     if(isD18Ok) {d18.notified.setValue("No");}
     if(!isD18Ok && d18.notified.getValue() != "Si") {d18.notified.setValue("Si");}
@@ -192,6 +198,12 @@ function Main() {
 
     if(isDP3Ok) {dp3.notified.setValue("No");}
     if(!isDP3Ok && dp3.notified.getValue() != "Si") {dp3.notified.setValue("Si");}
+    
+    if(isDP4Ok) {dp4.notified.setValue("No");}
+    if(!isDP4Ok && dp4.notified.getValue() != "Si") {dp4.notified.setValue("Si");}
+    
+    if(isDP5Ok) {dp5.notified.setValue("No");}
+    if(!isDP5Ok && dp5.notified.getValue() != "Si") {dp5.notified.setValue("Si");}
 
     if(isPACOk) {pac.notified.setValue("No");}
     if(!isPACOk && pac.notified.getValue() != "Si") {pac.notified.setValue("Si");}

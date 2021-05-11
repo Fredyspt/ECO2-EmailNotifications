@@ -17,7 +17,7 @@ function CheckDP1() {
   let timestampHour = Utilities.formatDate(rawTimestamp, "GMT-6","HH:mm");
 
   // Check permissive range 
-  let cSodaOk = sodaConcentration >= 8 && sodaConcentration <= 12;
+  let cSodaOk = sodaConcentration >= 9 && sodaConcentration <= 11;
 
   // Depending on chemical status, returns class name for HTML
   let chemicalColor = cSodaOk ? "center good" : "center bad"
