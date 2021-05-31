@@ -1,4 +1,4 @@
-function Main() {
+function App() {
   // Create machines' objects
   let d20 = CheckD20();
   let d202 = CheckD202();

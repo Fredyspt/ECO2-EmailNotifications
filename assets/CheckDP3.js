@@ -29,12 +29,12 @@ function CheckDP3() {
   let notified = worksheet.getRange("F42");
   let sendNotification;
 
+  // Sets notificaton time on cell  
+  let setNotificationTime = (time) => {worksheet.getRange("G42").setValue(time)}
   // Get notification time value
   let rawNotificationTime = worksheet.getRange("G42").getValue();
   // Substract hours and minutes from notification time
   let notificationHour = Utilities.formatDate(rawNotificationTime, "GMT-6","HH:mm");
-  // Sets notificaton time on cell  
-  let setNotificationTime = (time) => {worksheet.getRange("G42").setValue(time)}
 
   if(somethingWrong && notified.getValue() === "Si"){
     // If last timestamp equals notificationHour, then a notification has been already sent
@@ -42,11 +42,11 @@ function CheckDP3() {
       sendNotification = false;
       } else {
         sendNotification = true;
-        setNotificationTime(timestamp);
+        setNotificationTime(new Date());
       }
   } else if (somethingWrong && notified.getValue() === "No"){
     sendNotification = true;
-    setNotificationTime(timestamp);
+    setNotificationTime(new Date());
   } else {
     sendNotification = false;
   }

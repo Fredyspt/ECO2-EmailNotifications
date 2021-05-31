@@ -1,13 +1,13 @@
-function CheckD18() {
+function CheckD202(){
   // Fetch current values
   const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   const worksheet = spreadsheet.getSheetByName("Current Values");
 
   // (row, column, numRows, numColumns)
-  const dataRange = worksheet.getRange("B11:B17");
+  const dataRange = worksheet.getRange("B48:B54");
   let data = dataRange.getValues();
 
-  // Naming data 
+  // Name data 
   let sodaConcentration = data[0];
   let viscosityNoe = data[1];
   let solidsNoe = data[2];
@@ -15,10 +15,10 @@ function CheckD18() {
   let viscosityNoria = data[4];
   let solidsNoria = data[5];
   let thicknessNoria = data[6];
-  let responsible = worksheet.getRange("D11").getValue();
+  let responsible = worksheet.getRange("D48").getValue();
   
   // Get measurement timestamp and format it
-  let rawTimestamp = worksheet.getRange("E11").getValue();
+  let rawTimestamp = worksheet.getRange("E48").getValue();
   let timestamp = Utilities.formatDate(rawTimestamp, "GMT-6","dd/MM/yyyy HH:mm:ss");
   let timestampHour = Utilities.formatDate(rawTimestamp, "GMT-6","HH:mm");
 
@@ -44,13 +44,13 @@ function CheckD18() {
   let somethingWrong = !chemicals.every(Boolean);
 
   // Evaluate if a notification must be sent
-  let notified = worksheet.getRange("F11");
+  let notified = worksheet.getRange("F48");
   let sendNotification;
 
   // Sets notificaton time on cell  
-  let setNotificationTime = (time) => {worksheet.getRange("G11").setValue(time)}
+  let setNotificationTime = (time) => {worksheet.getRange("G48").setValue(time)}
   // Get notification time value
-  let rawNotificationTime = worksheet.getRange("G11").getValue();
+  let rawNotificationTime = worksheet.getRange("G48").getValue();
   // Substract hours and minutes from notification time
   let notificationHour = Utilities.formatDate(rawNotificationTime, "GMT-6","HH:mm");
 

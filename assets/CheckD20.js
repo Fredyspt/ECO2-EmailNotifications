@@ -38,19 +38,21 @@ function CheckD20(){
     if(n) {return "center good"} else {return "center bad"} 
   });
 
-  // If any value of the array is false, it returns false
+  // If every value of the array is true, it returns false
+  // If any value of the array is false, it means the machine has 
+  // a parameter out of range, them, somethingWrong returns true.
   let somethingWrong = !chemicals.every(Boolean);
 
   // Evaluate if a notification must be sent
   let notified = worksheet.getRange("F2");
   let sendNotification;
 
+  // Sets notificaton time on cell  
+  let setNotificationTime = (time) => {worksheet.getRange("G2").setValue(time)}
   // Get notification time value
   let rawNotificationTime = worksheet.getRange("G2").getValue();
   // Substract hours and minutes from notification time
   let notificationHour = Utilities.formatDate(rawNotificationTime, "GMT-6","HH:mm");
-  // Sets notificaton time on cell  
-  let setNotificationTime = (time) => {worksheet.getRange("G2").setValue(time)}
 
   if(somethingWrong && notified.getValue() === "Si"){
     // If last timestamp equals notificationHour, then a notification has been already sent
@@ -58,11 +60,11 @@ function CheckD20(){
       sendNotification = false;
       } else {
         sendNotification = true;
-        setNotificationTime(timestamp);
+        setNotificationTime(new Date());
       }
   } else if (somethingWrong && notified.getValue() === "No"){
     sendNotification = true;
-    setNotificationTime(timestamp);
+    setNotificationTime(new Date());
   } else {
     sendNotification = false;
   }
